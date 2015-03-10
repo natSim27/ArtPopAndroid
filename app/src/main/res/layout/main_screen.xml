@@ -24,7 +24,8 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="15"
-            android:weightSum="100">
+            android:weightSum="100"
+            android:id="@+id/button_panel_one">
 
             <Space
                 android:layout_width="match_parent"
@@ -61,13 +62,14 @@
             android:layout_height="match_parent"
             android:layout_weight="5" />
 
-        <RelativeLayout
+        <LinearLayout
 
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:weightSum="100"
-            android:layout_weight="50">
+            android:layout_weight="50"
+            android:id="@+id/media_panel">
 
             <Space
                 android:layout_width="fill_parent"
@@ -77,15 +79,23 @@
             <VideoView
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:id="@+id/videoView2"
+                android:id="@+id/media_video"
                 android:layout_weight="80" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/media_image"
+                android:alpha="0"
+                android:layout_weight="0" />
 
             <SurfaceView
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:id="@+id/surfaceView"
-                android:layout_weight="70" />
-        </RelativeLayout>
+                android:id="@+id/media_image_menu"
+                android:layout_weight="80"
+                android:alpha="0" />
+        </LinearLayout>
 
         <Space
             android:layout_width="0dp"
@@ -97,7 +107,8 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="15"
-            android:weightSum="100">
+            android:weightSum="100"
+            android:id="@+id/button_panel_two">
 
             <Space
                 android:layout_width="match_parent"
@@ -129,4 +140,11 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/fragment_container"></LinearLayout>
+
 </RelativeLayout>
+

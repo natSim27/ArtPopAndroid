@@ -21,23 +21,16 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.view.View.OnClickListener;
 
-import com.estimote.sdk.Beacon;
-import com.estimote.sdk.BeaconManager;
-import com.estimote.sdk.BeaconManager.MonitoringListener;
-import com.estimote.sdk.Region;
-
 import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 public class MainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
 
-    private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-    private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", ESTIMOTE_PROXIMITY_UUID, null, null);
     private static final int MAX_NUM_OF_SOUNDSTREAMS = 3;
 
-    public static BeaconManager beaconManager;
     public static SoundPool soundPool;
     public static MediaPlayer mediaPlayer;
 
@@ -49,25 +42,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ImageButton startButton = (ImageButton) findViewById(R.id.startButton);
 
-        //TODO: Stop beacons from being bitches
-        beaconManager = new BeaconManager(this);
-        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
-            @Override
-            public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                for(Beacon beacon : beacons){
-                    Log.d(TAG, "Detected beacon: " + beacon.getMacAddress() + " Beacon's Strength: " + beacon.getRssi() + "\n");
-                }
-                Log.d(TAG, "Detected beacon: " + beacons + "\n");
-
-            }
-        });
-
         //Creates the soundpool instance and loads sounds, if you wanna add more sounds look at the class at the bottom
         soundPool = new SoundPool(MAX_NUM_OF_SOUNDSTREAMS, AudioManager.STREAM_MUSIC,0);
         Sounds.loadSounds(this);
 
         //Haven't figured out how it works yet, just put it here for starters
         mediaPlayer = new MediaPlayer();
+
+
 
         //After everything is loaded up allow user to click start, i.e. don't put any loader classes after this
         startButton.setAlpha((float) 1.0);
@@ -85,15 +67,6 @@ public class MainActivity extends Activity {
     protected void onStart() {
         super.onStart();
 
-        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
-            @Override public void onServiceReady() {
-                try {
-                    beaconManager.startRanging(ALL_ESTIMOTE_BEACONS);
-                } catch (RemoteException e) {
-                    Log.e(TAG, "Cannot start ranging", e);
-                }
-            }
-        });
     }
 
     @Override
@@ -105,17 +78,11 @@ public class MainActivity extends Activity {
     protected void onStop() {
         super.onStop();
 
-        try {
-            beaconManager.stopRanging(ALL_ESTIMOTE_BEACONS);
-        } catch (RemoteException e) {
-            Log.e(TAG, "Cannot stop but it does not matter now", e);
-        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        beaconManager.disconnect();
     }
 
     public int playSound(int sound){return soundPool.play(sound, 0.4f,0.4f,1,0,1);}
@@ -129,4 +96,9 @@ public class MainActivity extends Activity {
 
         }
     }
+
+    /*public URI rootURI(){
+        URL webUrl = new URL("http", "moon.scs.ryerson.ca","");
+        return websiteURI = new URL("http://www.google.com").toURI();
+    }*/
 }
