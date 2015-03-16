@@ -38,7 +38,15 @@ public class MainScreen extends Activity {
     public static final String TAG = "MainScreen";
 
     private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-    private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", ESTIMOTE_PROXIMITY_UUID, null, null);
+    private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId", null, null, null);
+
+    //Mostly for reference but also good for calls
+    private static final String MR_BLUE_BEACON_MAC_ADDRESS = "C5:13:36:CB:3C:28";
+    private static final String MR_PURPLE_BEACON_MAC_ADDRESS = "D5:40:D4:D0:E4:65";
+    private static final String MR_GREEN_BEACON_MAC_ADDRESS = "C6:D2:2C:49:CD:89";
+
+    private Beacon currentBeacon;
+    private Beacon closestBeacon;
 
     private BeaconManager beaconManager = new BeaconManager(this);
 
@@ -50,24 +58,19 @@ public class MainScreen extends Activity {
         Buttons buttons = new Buttons();
 
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
-            @Override public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                Log.d(TAG, "Ranged beacons: " + beacons);
-            }
-        });
-
-        /*
-        //TODO: Stop beacons from being bitches
-
-        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                Log.d(TAG, "Ranged beacons: " + beacons);
-               *//* Log.d(TAG, "Detected beacon: " + beacons + "\n");
                 for(Beacon beacon : beacons){
+                    currentBeacon = beacon;
                     Log.d(TAG, "Detected beacon: " + beacon.getMacAddress() + " Beacon's Strength: " + beacon.getRssi() + "\n");
-                }*//*
+                    if(beacons.size()==0){
+                        closestBeacon = currentBeacon;
+                    }else{
+                        if(currentBeacon.getRssi()> closestBeacon.getRssi()) closestBeacon = currentBeacon;
+                    }
+                }
             }
-        });*/
+        });
 
         buttons.getButton(buttons.ARTIST_BUTTON).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,12 +228,30 @@ public class MainScreen extends Activity {
         }
     }
 
-    /*private static class startFragment{
+    private static class startFragment{
+
+        ArtistFragment artistFragment = new ArtistFragment();
+        UserAccountFragment userFragment = new UserAccountFragment();
+        CommentFragment commentFragment = new CommentFragment();
+
+
         public startFragment(){
+
+            buttons.getButton(buttons.ARTIST_BUTTON).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    ArtistFragment artistFragment = new ArtistFragment();
+                    transaction.add(R.id.fragment_container, artistFragment);
+
+                    transaction.commit();
+                }
+            });
 
         transaction.attach();//returns a fragment
         transaction.commit();//returns an int
         }
-    }*/
+    }
 
 }

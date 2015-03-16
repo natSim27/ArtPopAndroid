@@ -38,7 +38,7 @@
                 android:id="@+id/artistInfoButton"
                 android:layout_weight="30"
                 android:layout_gravity="center"
-                android:src="@drawable/artist_info_icon"
+                android:src="@drawable/artist_icon"
                 android:scaleType="fitXY"
                 android:background="@android:color/transparent" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="0dp"
                 android:id="@+id/shareButton"
                 android:layout_weight="30"
-                android:src="@drawable/share_icon_2"
+                android:src="@drawable/share_icon"
                 android:scaleType="fitXY"
                 android:background="@android:color/transparent" />
         </LinearLayout>
