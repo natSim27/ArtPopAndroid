@@ -31,6 +31,7 @@ import com.supercourse.artpop.artpopandroid.R;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainScreen extends Activity {
@@ -55,8 +56,6 @@ public class MainScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
 
-        Buttons buttons = new Buttons();
-
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
@@ -72,40 +71,8 @@ public class MainScreen extends Activity {
             }
         });
 
-        buttons.getButton(buttons.ARTIST_BUTTON).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                ArtistFragment artistFragment = new ArtistFragment();
-                transaction.add(R.id.fragment_container, artistFragment);
-
-                transaction.commit();
-            }
-        });
-        buttons.getButton(buttons.USER_ACCOUNT_BUTTON).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                UserAccountFragment userFragment = new UserAccountFragment();
-                transaction.add(R.id.fragment_container, userFragment);
-
-                transaction.commit();
-            }
-        });
-        buttons.getButton(buttons.COMMENT_BUTTON).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                CommentFragment commentFragment = new CommentFragment();
-                transaction.add(R.id.fragment_container, commentFragment);
-
-                transaction.commit();
-            }
-        });
-
+        Buttons buttons = new Buttons();
+        buttons.setButtonOnClicks();
 
         //String url = "http://www.scs.ryerson.ca/~m7antoni/ArtPop/PandoricaOpens.jpg";
         String url = "http://www.scs.ryerson.ca/~m7antoni/ArtPop/Icebreaker.mp4";
@@ -202,6 +169,35 @@ public class MainScreen extends Activity {
 
     private class Buttons{
         public int ARTIST_BUTTON=1, USER_ACCOUNT_BUTTON=2, COMMENT_BUTTON=3,SHARE_BUTTON=4;
+        Fragments fragments = new Fragments();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        public void setButtonOnClicks(){
+            getButton(ARTIST_BUTTON).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    transaction.add(R.id.fragment_container, fragments.getFragment("artist"));
+                    transaction.commit();
+                }
+            });
+
+            getButton(USER_ACCOUNT_BUTTON).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    transaction.add(R.id.fragment_container, fragments.getFragment("user"));
+                    transaction.commit();
+                }
+            });
+
+            getButton(COMMENT_BUTTON).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    transaction.add(R.id.fragment_container, fragments.getFragment("comment"));
+                    transaction.commit();
+                }
+            });
+        }
 
         public ImageButton getButton(int button){
             ImageButton buttonRequest = null;
@@ -228,29 +224,18 @@ public class MainScreen extends Activity {
         }
     }
 
-    private static class startFragment{
+    private class Fragments{
 
-        ArtistFragment artistFragment = new ArtistFragment();
-        UserAccountFragment userFragment = new UserAccountFragment();
-        CommentFragment commentFragment = new CommentFragment();
+        public Fragments(){
+        }
 
+        public Fragment getFragment(String fragmentType){
+            HashMap<String, Fragment> fragmentMap = new HashMap<String, Fragment>();
+            fragmentMap.put("artist", new ArtistFragment());
+            fragmentMap.put("user", new UserAccountFragment());
+            fragmentMap.put("comment", new CommentFragment());
 
-        public startFragment(){
-
-            buttons.getButton(buttons.ARTIST_BUTTON).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    FragmentManager fragmentManager = getFragmentManager();
-                    FragmentTransaction transaction = fragmentManager.beginTransaction();
-                    ArtistFragment artistFragment = new ArtistFragment();
-                    transaction.add(R.id.fragment_container, artistFragment);
-
-                    transaction.commit();
-                }
-            });
-
-        transaction.attach();//returns a fragment
-        transaction.commit();//returns an int
+            return fragmentMap.get(fragmentType);
         }
     }
 

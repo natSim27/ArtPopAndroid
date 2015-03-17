@@ -34,7 +34,7 @@
             android:layout_height="fill_parent"
             android:id="@+id/imageView"
             android:layout_weight="15"
-            android:src="@drawable/artist_info_icon" />
+            android:src="@drawable/artist_icon" />
 
         <Space
             android:layout_width="0dp"
@@ -88,7 +88,7 @@
             android:layout_weight="15"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/home_icon" />
+            android:src="@drawable/home_button" />
 
         <Space
             android:layout_width="0dp"
@@ -102,7 +102,7 @@
             android:layout_weight="15"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/facebook_logo" />
+            android:src="@drawable/fb_icon" />
 
         <Space
             android:layout_width="0dp"
@@ -116,7 +116,7 @@
             android:layout_weight="15"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/twitter_icon" />
+            android:src="@drawable/tweety_icon" />
 
         <Space
             android:layout_width="0dp"
@@ -130,7 +130,7 @@
             android:layout_weight="15"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:src="@drawable/instagram_logo" />
+            android:src="@drawable/insta_icon" />
 
     </LinearLayout>
 
