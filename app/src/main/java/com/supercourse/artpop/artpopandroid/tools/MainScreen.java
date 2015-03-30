@@ -31,6 +31,7 @@ import com.supercourse.artpop.artpopandroid.R;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -46,8 +47,12 @@ public class MainScreen extends Activity {
     private static final String MR_PURPLE_BEACON_MAC_ADDRESS = "D5:40:D4:D0:E4:65";
     private static final String MR_GREEN_BEACON_MAC_ADDRESS = "C6:D2:2C:49:CD:89";
 
+    int counter = 0;
+
     private Beacon currentBeacon;
     private Beacon closestBeacon;
+
+    ArrayList<Beacon> detectedBeacons = new ArrayList<Beacon>();
 
     private BeaconManager beaconManager = new BeaconManager(this);
 
@@ -62,11 +67,8 @@ public class MainScreen extends Activity {
                 for(Beacon beacon : beacons){
                     currentBeacon = beacon;
                     Log.d(TAG, "Detected beacon: " + beacon.getMacAddress() + " Beacon's Strength: " + beacon.getRssi() + "\n");
-                    if(beacons.size()==0){
-                        closestBeacon = currentBeacon;
-                    }else{
-                        if(currentBeacon.getRssi()> closestBeacon.getRssi()) closestBeacon = currentBeacon;
-                    }
+                    closestBeacon = beacons.get(0);
+                    Log.d(TAG, "Closet beacon: " + closestBeacon.getMacAddress() + " Beacon's Strength: " + closestBeacon.getRssi() + "\n");
                 }
             }
         });
@@ -75,7 +77,7 @@ public class MainScreen extends Activity {
         buttons.setButtonOnClicks();
 
         //String url = "http://www.scs.ryerson.ca/~m7antoni/ArtPop/PandoricaOpens.jpg";
-        String url = "http://www.scs.ryerson.ca/~m7antoni/ArtPop/Icebreaker.mp4";
+        String url = "http://www.scs.ryerson.ca/~m7antoni/ArtPop/Demo1.mp4";
 
         VideoView videoView = (VideoView) findViewById(R.id.media_video);
         SurfaceView menu = (SurfaceView) findViewById(R.id.media_image_menu);

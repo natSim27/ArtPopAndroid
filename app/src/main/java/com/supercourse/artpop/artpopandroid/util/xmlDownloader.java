@@ -37,7 +37,7 @@ public class xmlDownloader {
             BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
             Log.i(TAG, "Got InputStream and BufferedInputStream");
 
-            File xmlDownloadFile = new File(context.getCacheDir(), "xml_download_file.dat");
+            File xmlDownloadFile = new File(context.getCacheDir(), "artPop_xml_download.xml");
             FileOutputStream fileOutputStream = new FileOutputStream(xmlDownloadFile);
 
             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
