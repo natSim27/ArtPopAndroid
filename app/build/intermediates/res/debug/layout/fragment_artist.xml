@@ -1,0 +1,148 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supercourse.artpop.artpopandroid.tools.ArtistFragment"
+    android:weightSum="100"
+    android:background="@android:color/white"
+    android:id="@+id/main_artist_layout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/artist_name_picture"
+        android:layout_weight="25"
+        android:weightSum="100">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/artist_image"
+            android:layout_weight="15"
+            android:src="@drawable/micheal_snow" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Michael Snow"
+            android:id="@+id/artist_name"
+            android:layout_weight="60"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:weightSum="100">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Michael Snow is a Canadian artist working in painting, sculpture, video, films, photography, holography, drawing, books and music. He attended OCAD University and his works are sometimes showcased at the Art Gallery of Ontario."
+            android:id="@+id/artist_blurb"
+            android:layout_weight="80" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:weightSum="100">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="15" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/website"
+            android:layout_weight="15"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_button" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/facebook"
+            android:layout_weight="15"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/fb_icon" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/twitter"
+            android:layout_weight="15"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/tweety_icon" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/instagram"
+            android:layout_weight="15"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/insta_icon" />
+
+    </LinearLayout>
+
+</LinearLayout>
+<!-- From: file:/C:/Users/Nathalie/AndroidStudioProjects/ArtPopAndroid/app/src/main/res/layout/fragment_artist.xml -->

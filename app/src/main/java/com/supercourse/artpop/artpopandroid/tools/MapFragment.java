@@ -14,10 +14,10 @@ import com.supercourse.artpop.artpopandroid.R;
  * A simple {@link Fragment} subclass.
  *
  */
-public class UserAccountFragment extends Fragment {
+public class MapFragment extends Fragment {
 
 
-    public UserAccountFragment() {
+    public MapFragment() {
         // Required empty public constructor
     }
 

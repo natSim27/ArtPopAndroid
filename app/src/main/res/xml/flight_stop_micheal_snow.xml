@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installation>
+    <beaconID>D5:40:D4:D0:E4:65</beaconID>
+    
+    <installationName>Flight Stop</installationName>
+    
+    <artist>
+        <artistName>Michael Snow</artistName>
+        <artistBlurb>Michael Snow is a Canadian artist working in painting, sculpture, video, films, photography, holography, drawing, books and music. He attended OCAD University and his works are sometimes showcased at the Art Gallery of Ontario.</artistBlurb>
+        <artistPhoto>http://scs.ryerson.ca/~m7antoni/ArtPop/MichaelSnow.jpg</artistPhoto>
+        <artistSite></artistSite>
+        <socialMedia>
+            <artistFacebook></artistFacebook>
+            <artistTwitter></artistTwitter>
+            <artistInstagram></artistInstagram>
+        </socialMedia>
+    </artist>
+    
+    <video>http://scs.ryerson.ca/~m7antoni/ArtPop/FlightStop-MichaelSnow.mp4</video>
+    
+</installation>

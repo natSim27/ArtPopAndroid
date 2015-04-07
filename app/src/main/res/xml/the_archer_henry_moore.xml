@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installation>
+    <beaconID>C5:13:36:CB:3C:28</beaconID>
+    
+    <installationName>The Archer</installationName>
+    
+    <artist>
+        <artistName>Henry Moore</artistName>
+        <artistBlurb>Henry Moore (1898-1986) was a sculptor and artist best known for his abstract bronze sculptures. He won the International Sculpture Prize in 1948, turned down a knighthood in 1951, was awarded the Companion of Honour in 1955 and the Order of Merit in 1963.</artistBlurb>
+        <artistPhoto>http://scs.ryerson.ca/~m7antoni/ArtPop/HenryMoore.jpg</artistPhoto>
+        <artistSite></artistSite>
+        <socialMedia>
+            <artistFacebook></artistFacebook>
+            <artistTwitter></artistTwitter>
+            <artistInstagram></artistInstagram>
+        </socialMedia>
+    </artist>
+    
+    <video>http://scs.ryerson.ca/~m7antoni/ArtPop/TheArcher-HenryMoore.mp4</video>
+    
+</installation>

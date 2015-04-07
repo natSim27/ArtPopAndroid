@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supercourse.artpop.artpopandroid.tools.MainScreen"
+    android:background="@drawable/no_installation"
+    android:id="@+id/back_layout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="100"
+        android:background="@android:color/white"
+        android:id="@+id/main_screen_layout">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="15"
+            android:weightSum="100"
+            android:id="@+id/button_panel_one">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/artistInfoButton"
+                android:layout_weight="30"
+                android:layout_gravity="center"
+                android:src="@drawable/artist_icon"
+                android:scaleType="fitXY"
+                android:background="@android:color/transparent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:weightSum="100"
+            android:layout_weight="50"
+            android:id="@+id/media_panel">
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
+
+            <VideoView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/media_video"
+                android:layout_weight="80" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/media_image"
+                android:alpha="0"
+                android:layout_weight="0" />
+
+            <SurfaceView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/media_image_menu"
+                android:layout_weight="80"
+                android:alpha="0" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="5" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="15"
+            android:weightSum="100"
+            android:id="@+id/button_panel_two">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="30" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/mapButton"
+                android:layout_weight="30"
+                android:src="@drawable/cancel_icon"
+                android:scaleType="fitXY"
+                android:background="@android:color/transparent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/fragment_container"></LinearLayout>
+
+</RelativeLayout>
+
+<!-- From: file:/C:/Users/Nathalie/AndroidStudioProjects/ArtPopAndroid/app/src/main/res/layout/main_screen.xml -->

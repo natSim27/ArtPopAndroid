@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="20.0.0" >
+        <source path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\main\assets" >
+            <file
+                name="graffiti_alley_style_in_progress.xml"
+                path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\main\assets\graffiti_alley_style_in_progress.xml" />
+            <file
+                name="the_archer_henry_moore.xml"
+                path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\main\assets\the_archer_henry_moore.xml" />
+            <file
+                name="beacon_to_installation.xml"
+                path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\main\assets\beacon_to_installation.xml" />
+            <file
+                name="flight_stop_micheal_snow.xml"
+                path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\main\assets\flight_stop_micheal_snow.xml" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="C:\Users\Nathalie\AndroidStudioProjects\ArtPopAndroid\app\src\debug\assets" />
+    </dataSet>
+
+</merger>

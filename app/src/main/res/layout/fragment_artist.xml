@@ -7,14 +7,15 @@
     android:layout_height="match_parent"
     tools:context="com.supercourse.artpop.artpopandroid.tools.ArtistFragment"
     android:weightSum="100"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:id="@+id/main_artist_layout">
 
     <!-- TODO: Update blank fragment layout -->
 
     <Space
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="5" />
+        android:layout_weight="6" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -27,14 +28,14 @@
         <Space
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="5" />
+            android:layout_weight="10" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/imageView"
+            android:id="@+id/artist_image"
             android:layout_weight="15"
-            android:src="@drawable/artist_icon" />
+            android:src="@drawable/micheal_snow" />
 
         <Space
             android:layout_width="0dp"
@@ -45,29 +46,38 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Diane Landry"
-            android:id="@+id/textView"
+            android:text="Michael Snow"
+            android:id="@+id/artist_name"
             android:layout_weight="60"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Space
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5" />
+        android:layout_width="20px"
+        android:layout_height="20px" />
 
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="      French Canadian artist, sometimes rows boats."
-        android:id="@+id/artist_blurb"
-        android:layout_weight="30" />
+        android:layout_weight="40"
+        android:weightSum="100">
 
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Michael Snow is a Canadian artist working in painting, sculpture, video, films, photography, holography, drawing, books and music. He attended OCAD University and his works are sometimes showcased at the Art Gallery of Ontario."
+            android:id="@+id/artist_blurb"
+            android:layout_weight="80" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"

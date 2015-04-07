@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supercourse.artpop.artpopandroid.tools.CommentFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px" />
+
+</LinearLayout>
+<!-- From: file:/C:/Users/Nathalie/AndroidStudioProjects/ArtPopAndroid/app/src/main/res/layout/fragment_comment.xml -->

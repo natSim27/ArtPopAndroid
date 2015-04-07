@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installatonTable>
+    <installation>
+        <beaconMacAddress>C6:D2:2C:49:CD:89</beaconMacAddress>
+        <installationName>Graffiti Alley</installationName>
+        <installationXML>graffiti_alley_style_in_progress.xml</installationXML>
+    </installation>
+
+    <installation>
+        <beaconMacAddress>C5:13:36:CB:3C:28</beaconMacAddress>
+        <installationName>The Archer</installationName>
+        <installationXML>the_archer_henry_moore.xml</installationXML>
+    </installation>
+    
+    <installation>
+        <beaconMacAddress>D5:40:D4:D0:E4:65</beaconMacAddress>
+        <installationName>Flight Stop</installationName>
+        <installationXML>flight_stop_micheal_snow.xml</installationXML>
+    </installation>
+</installatonTable><!-- From: file:/C:/Users/Nathalie/AndroidStudioProjects/ArtPopAndroid/app/src/main/res/xml/beacon_to_installation.xml -->

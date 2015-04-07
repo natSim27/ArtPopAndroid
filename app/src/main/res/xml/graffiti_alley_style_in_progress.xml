@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installation>
+    <beaconID>C6:D2:2C:49:CD:89</beaconID>
+    
+    <installationName>Graffiti Alley</installationName>
+    
+    <artist>
+        <artistName>Style In Progress</artistName>
+        <artistBlurb>Style In Progress is a non-profit organization that promotes urban art, music, dance, and fashion through events and partnerships.</artistBlurb>
+        <artistPhoto>http://scs.ryerson.ca/~m7antoni/ArtPop/StyleInProgress.jpg</artistPhoto>
+        <artistSite>www.styleinprogress.ca</artistSite>
+        <socialMedia>
+            <artistFacebook></artistFacebook>
+            <artistTwitter></artistTwitter>
+            <artistInstagram></artistInstagram>
+        </socialMedia>
+    </artist>
+    
+    <video>
+        http://scs.ryerson.ca/~m7antoni/ArtPop/GraffitiAlley-StyleInProgress.mp4
+    </video>
+
+    
+</installation>

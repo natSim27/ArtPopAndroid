@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supercourse.artpop.artpopandroid.tools.MapFragment"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@drawable/back_splash">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:id="@+id/user_name_picture"
+        android:layout_weight="15"
+        android:weightSum="100">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="45" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Art Map"
+            android:id="@+id/textView"
+            android:layout_weight="60"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView"
+            android:layout_weight="35"
+            android:src="@drawable/map" />
+    </LinearLayout>
+
+</LinearLayout>
+<!-- From: file:/C:/Users/Nathalie/AndroidStudioProjects/ArtPopAndroid/app/src/main/res/layout/fragment_user_account.xml -->
